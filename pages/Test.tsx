@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Test from '../components/Test';
+import Head from 'next/head';
+import Link from 'next/link';
+
+// TODO: import order eslint
 
 interface User {
   id: number;
@@ -28,6 +31,9 @@ export default () => {
 
   return (
     <>
+      <Head>
+        <title>Counter</title>
+      </Head>
       <h1>
         {test} : {count}
       </h1>
@@ -36,7 +42,9 @@ export default () => {
       </span>
       <p onClick={onIncliment}>CLICK</p>
       <p onClick={onReset}>RESET</p>
-      <Link href="/post/[id]" as={`/post/${count}`}>
+      {/* {{ pathname: '/posts', query: { id: '2' } }}
+      "/post/[id]" */}
+      <Link href={`/post?id=${count}`} as={`/post/${count}`}>
         <a>POST!!!</a>
       </Link>
       <Test />
