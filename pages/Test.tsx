@@ -1,4 +1,7 @@
+import * as React from 'react';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Test from '../components/Test';
 
 interface User {
   id: number;
@@ -17,12 +20,11 @@ export default () => {
 
   useEffect(() => {
     console.log('useeffect');
-
-    // setUser({
-    //   id: 2,
-    //   name: 'TEST!!!!!!',
-    // });
-  }, [count]);
+    setUser({
+      id: 2,
+      name: 'TEST!!!!!!',
+    });
+  }, [setCount]);
 
   return (
     <>
@@ -34,6 +36,10 @@ export default () => {
       </span>
       <p onClick={onIncliment}>CLICK</p>
       <p onClick={onReset}>RESET</p>
+      <Link href="/post/[id]" as={`/post/${count}`}>
+        <a>POST!!!</a>
+      </Link>
+      <Test />
     </>
   );
 };
