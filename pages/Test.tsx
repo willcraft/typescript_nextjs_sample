@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import Test from '../components/Test';
+
+import { useEffect, useState } from 'react';
+
 import Head from 'next/head';
 import Link from 'next/link';
+import Test from '../components/Test';
 
 // TODO: import order eslint
 
@@ -42,9 +44,7 @@ export default () => {
       </span>
       <p onClick={onIncliment}>CLICK</p>
       <p onClick={onReset}>RESET</p>
-      {/* {{ pathname: '/posts', query: { id: '2' } }}
-      "/post/[id]" */}
-      <Link href={`/post?id=${count}`} as={`/post/${count}`}>
+      <Link href={{ pathname: '/post', query: { id: count } }} as={`/post/${count}`}>
         <a>POST!!!</a>
       </Link>
       <Test />

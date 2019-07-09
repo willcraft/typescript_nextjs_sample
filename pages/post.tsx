@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { useRouter } from 'next/router';
+
 import Head from 'next/head';
 import MainTitle from '../components/MainTitle';
 import fetch from 'isomorphic-unfetch';
+import { useRouter } from 'next/router';
 
 const Post = ({ stars, id }: { stars: number; id: number }) => {
   const router = useRouter();
