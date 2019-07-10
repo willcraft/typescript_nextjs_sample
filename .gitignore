@@ -96,3 +96,5 @@ typings/
 
 
 .envrc
+.firebaserc
+dist/
